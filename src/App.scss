@@ -1,16 +1,12 @@
 $greyDark: #040404;
 $greyLight: #131313;
 $greyLighter: #282828;
+$greyEvenLighter: #181818;
 $greyText: #b3b3b3;
 $greyNav: #090909;
-$black: #000000ff;
-$smoky-black: #141010ff;
-$charleston-green: #1f3030ff;
-$feldgrau: #4c5959ff;
-$nickel: #707a7aff;
 
 @font-face {
-  font-family: 'Doctrin';
+  font-family: 'Docktrin';
   src: url(./fonts/docktrin.ttf);
 }
 
@@ -18,7 +14,6 @@ $nickel: #707a7aff;
   font-family: 'BrotherTattoo';
   src: url(./fonts/BrotherTattoo_Demo.ttf);
 }
-
 
 * {
   box-sizing: border-box;
@@ -31,7 +26,7 @@ $nickel: #707a7aff;
 }
 
 .navBar {
-  width: 281px;
+  width: 228px;
   height: 100%;
   background: $greyDark;
   padding: 10px 10px 0px;
@@ -39,17 +34,20 @@ $nickel: #707a7aff;
   flex-direction: column;
 
   .logo {
-    padding: 1.1rem 0.8rem;
-    color: $nickel;
-    font-size: 2.7rem;
-    font-family: 'BrotherTattoo';
+    // padding: 1.1rem 0.8rem;
 
-    svg {
+    // svg {
+    //   max-width: 130px;
+
+    //   path {
+    //     fill: white;
+    //   }
+    // }
+    h2 {
+      padding: 1.1rem 0.8rem;
       max-width: 130px;
-
-      path {
-        fill: white;
-      }
+      color: white;
+      font-family: 'Docktrin';
     }
   }
 
@@ -109,8 +107,8 @@ $nickel: #707a7aff;
 
 .upperNav {
   background: $greyNav;
-  height: 55px;
-  width: 95%;
+  height: 56px;
+  width: 100%;
   display: flex;
   align-items: center;
   color: white;
@@ -119,14 +117,10 @@ $nickel: #707a7aff;
 
 .main {
   width: 100%;
-  display: flex;
-  flex-flow: row wrap;
 
   .mainContent {
     color: white;
     padding: 0.5rem 2rem;
-    display: flex;
-    flex-flow: row wrap;
 
     h1 {
       font-size: 1.5rem;
@@ -135,17 +129,21 @@ $nickel: #707a7aff;
 }
 
 .cardsWrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
   .card {
-    // background: $greyLighter;
-    width: 200px;
+    background: $greyEvenLighter;
+    border-radius: 7px;
+    width: 190px;
     overflow: hidden;
-    // padding: 1.2rem;
-    // box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
-    border-radius: 20px;
+    padding: 1.2rem;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
 
     .cardImage {
-      height: 200px;
-      // box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
+      height: 160px;
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
 
       img {
         width: 100%;
@@ -155,7 +153,7 @@ $nickel: #707a7aff;
     }
 
     .cardContent {
-      padding: 0.2rem 0;
+      padding: 0.4rem 0;
 
       h3 {
         font-weight: 600;
