@@ -3,20 +3,22 @@ import home_svg from '../svg/fi-bs-home.svg'
 import search_svg from '../svg/fi-bs-search.svg'
 import lib_svg from '../svg/fi-bs-book.svg'
 
-const _default = [
-  {
-    name: 'home',
-    value: true
-  },
-  {
-    name: 'search',
-    value: false
-  },
-  {
-    name: 'libs',
-    value: false
-  }
-]
+// import { useState } from 'react' 
+
+// const _default = [
+//   {
+//     name: 'home',
+//     value: true
+//   },
+//   {
+//     name: 'search',
+//     value: false
+//   },
+//   {
+//     name: 'libs',
+//     value: false
+//   }
+// ]
 
 const NavBar = ({ page, setter }) => {
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { BrowserRouter as Router, Route} from 'react-router-dom'
 
 import './App.scss'
