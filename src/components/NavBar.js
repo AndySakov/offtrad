@@ -1,6 +1,9 @@
 import React from 'react'
+import home_svg from '../svg/fi-bs-home.svg'
+import search_svg from '../svg/fi-bs-search.svg'
+import lib_svg from '../svg/fi-bs-book.svg'
 
-const NavBar = () => {
+const NavBar = ({ page, setter }) => {
   return (
     <div className='navBar'>
       <div className='logo'>
@@ -8,9 +11,9 @@ const NavBar = () => {
         <h2>Offtrad!</h2>
       </div>
       <ul>
-        <li className='active'>Home</li>
-        <li>Search</li>
-        <li>Your Library</li>
+        <li><div className="text-with-icon"><img src={home_svg} className='icon' alt="Home"/>Home</div></li>
+        <li><div className="text-with-icon"><img src={search_svg} alt="Search" className="icon"/>Search</div></li>
+        <li><div className="text-with-icon"><img src={lib_svg} alt="Library" className="icon"/>My Library</div></li>
       </ul>
       <div className='cookies'>
         <span>Cookies</span>

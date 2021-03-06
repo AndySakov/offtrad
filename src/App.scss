@@ -4,6 +4,14 @@ $greyLighter: #282828;
 $greyEvenLighter: #181818;
 $greyText: #b3b3b3;
 $greyNav: #090909;
+// Dark Mode Scheme
+$black: #000000ff;
+$smoky-black: #141010ff;
+$charleston-green: #1f3030ff;
+$charleston-green-hover: lighten($charleston-green, 15%);
+$feldgrau: #4c5959ff;
+$nickel: #707a7aff;
+//Light Mode Scheme
 
 @font-face {
   font-family: 'Docktrin';
@@ -15,8 +23,39 @@ $greyNav: #090909;
   src: url(./fonts/BrotherTattoo_Demo.ttf);
 }
 
+@font-face {
+  font-family: 'Roboto Regular';
+  src: url(./fonts/Roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Black';
+  src: url(./fonts/Roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Bold';
+  src: url(./fonts/Roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'Roboto Medium';
+  src: url(./fonts/Roboto/Roboto-Medium.ttf);
+}
+
 * {
   box-sizing: border-box;
+  font-family: 'Roboto-Bold', sans-serif;
+  font-weight: bold;
+
+  h1 {
+    font-weight: bolder;
+  }
+
+  h3 {
+    font-weight: 500;
+    // font-size: ;
+  }
 }
 
 .App {
@@ -48,6 +87,7 @@ $greyNav: #090909;
       max-width: 130px;
       color: white;
       font-family: 'Docktrin';
+      font-weight: bold;
     }
   }
 
@@ -64,12 +104,20 @@ $greyNav: #090909;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
 
-      &.active {
+      &:hover {
+        color: white;
         background: $greyLighter;
       }
 
-      &:hover {
-        color: white;
+      .text-with-icon {
+        padding: 0.1rem;
+
+        .icon {
+          justify-self: center;
+          width: 1.3rem;
+          margin-right: 1.15rem;
+          filter: invert(.7);
+        }
       }
     }
   }
@@ -107,12 +155,51 @@ $greyNav: #090909;
 
 .upperNav {
   background: $greyNav;
-  height: 56px;
+  height: 60px;
   width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
+
+  .btn-login {
+    background: white;
+    color: black;
+    justify-self: end;
+    font-weight: bolder;
+    font-size: 0.75rem;
+    width: 7.5rem;
+    height: 2.4rem;
+    margin-left: 1rem;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-login:hover {
+    width: 7.7rem;
+    height: 2.6rem;
+    background: white;
+    font-weight: 1.7rem;
+  }
+
+  .btn-signup {
+    background: $greyNav;
+    color: white;
+    justify-self: end;
+    font-weight: bolder;
+    font-size: 0.75rem;
+    width: 6rem;
+    height: 1.5rem;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .btn-signup:hover {
+    // width: 6.2rem;
+    // height: 1.7rem;
+    font-size: 0.8rem;
+  }
 }
 
 .main {
@@ -120,12 +207,25 @@ $greyNav: #090909;
 
   .mainContent {
     color: white;
-    padding: 0.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 0.5rem 1.5rem;
+
+    height: 90%;
 
     h1 {
       font-size: 1.5rem;
     }
   }
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  padding: 1rem;
 }
 
 .cardsWrap {
@@ -156,8 +256,8 @@ $greyNav: #090909;
       padding: 0.4rem 0;
 
       h3 {
-        font-weight: 600;
-        font-size: 0.9rem;
+        font-weight: bold;
+        font-size: 0.8rem;
       }
     }
   }
