@@ -3,7 +3,37 @@ import home_svg from '../svg/fi-bs-home.svg'
 import search_svg from '../svg/fi-bs-search.svg'
 import lib_svg from '../svg/fi-bs-book.svg'
 
+const _default = [
+  {
+    name: 'home',
+    value: true
+  },
+  {
+    name: 'search',
+    value: false
+  },
+  {
+    name: 'libs',
+    value: false
+  }
+]
+
 const NavBar = ({ page, setter }) => {
+
+  // const [bars, setBar] = useState(_default)
+
+  // const updateBar = bar => {
+  //   const previouslySelected = bars.filter((bar))
+  //   switch (bar) {
+  //     case "home":
+  //       setBar([...bars, home: !previouslySelected.value])
+  //       break;
+    
+  //     default:
+  //       break;
+  //   }
+  // }
+
   return (
     <div className='navBar'>
       <div className='logo'>
@@ -16,8 +46,8 @@ const NavBar = ({ page, setter }) => {
         <li><div className="text-with-icon"><img src={lib_svg} alt="Library" className="icon"/>My Library</div></li>
       </ul>
       <div className='cookies'>
-        <span>Cookies</span>
-        <span>Privacy </span>
+        <span>Privacy Policy</span>
+        <span>Terms and Conditions</span>
       </div>
     </div>
   )

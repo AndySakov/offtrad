@@ -106,7 +106,7 @@ $nickel: #707a7aff;
 
       &:hover {
         color: white;
-        background: $greyLighter;
+        // background: $greyLighter;
       }
 
       .text-with-icon {
@@ -151,6 +151,25 @@ $nickel: #707a7aff;
   color: white;
   z-index: 2;
   position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $greyLighter;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .upperNav {
