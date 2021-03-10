@@ -1,14 +1,30 @@
+// @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
+
 $greyDark: #040404;
 $greyLight: #131313;
 $greyLighter: #282828;
 $greyEvenLighter: #181818;
 $greyText: #b3b3b3;
 $greyNav: #090909;
+$greyCardDark: lighten($greyDark, 7%);
+$greyCardLight: lighten($greyLight, 7.5%);
 // Dark Mode Scheme
 $black: #000000ff;
-$smoky-black: #141010ff;
+$smoky-black: #160e0eff;
+$outer-space-crayola: #1a3232ff;
+$outer-space-crayola-hover: lighten($outer-space-crayola, 15%);
+$deep-space-sparkle: #426161ff;
+$steel-teal: #638888ff;
+$eerie-black: #1c1c1cff;
+$old-burgundy: #362222ff;
+$dark-slate-gray: #2a5252ff;
+$dark-slate-gray-hover: lighten($dark-slate-gray, 20%);
+$ming: #527878ff;
+$steel-teal: #719898ff;
 $charleston-green: #1f3030ff;
 $charleston-green-hover: lighten($charleston-green, 15%);
+$nav-item-color: lighten($charleston-green, 20%);
+$nav-item-color-hover: lighten($nav-item-color, 15%);
 $feldgrau: #4c5959ff;
 $nickel: #707a7aff;
 //Light Mode Scheme
@@ -43,6 +59,28 @@ $nickel: #707a7aff;
   src: url(./fonts/Roboto/Roboto-Medium.ttf);
 }
 
+::-webkit-scrollbar {
+  width: 7px;
+  // height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $greyLight;
+  border-radius: 30px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Roboto-Bold', sans-serif;
@@ -58,10 +96,30 @@ $nickel: #707a7aff;
   }
 }
 
+.navText {
+  color: $greyText;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+    // background: $greyEvenLighter;
+  }
+}
+
+.activeNav {
+  color: $dark-slate-gray;
+
+  &:hover {
+    color: $dark-slate-gray-hover;
+  }
+}
+
 .App {
   height: calc(100vh - 90px);
   background: $greyLight;
   display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .navBar {
@@ -106,7 +164,7 @@ $nickel: #707a7aff;
 
       &:hover {
         color: white;
-        // background: $greyLighter;
+        // background: $greyEvenLighter;
       }
 
       .text-with-icon {
@@ -114,7 +172,8 @@ $nickel: #707a7aff;
 
         .icon {
           justify-self: center;
-          width: 1.3rem;
+          // width: 1.2rem;
+          // height: 1.2rem;
           margin-right: 1.15rem;
           filter: invert(.7);
         }
@@ -138,7 +197,9 @@ $nickel: #707a7aff;
 .outerWrap {
   background: grey;
   height: 100vh;
-  min-height: 100%;
+  min-height: 400px;
+  width: 100vw;
+  min-width: 700px;
 }
 
 .musicControls {
@@ -151,25 +212,6 @@ $nickel: #707a7aff;
   color: white;
   z-index: 2;
   position: relative;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: $greyLighter;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }
 
 .upperNav {
@@ -222,16 +264,18 @@ $nickel: #707a7aff;
 }
 
 .main {
-  width: 100%;
+  width: 86%;
 
   .mainContent {
     color: white;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+    // overflow-x: scroll;
     padding: 0.5rem 1.5rem;
 
-    height: 90%;
+    height: 91%;
+    width: 100%;
 
     h1 {
       font-size: 1.5rem;
@@ -242,7 +286,9 @@ $nickel: #707a7aff;
 .category {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  // justify-content: space-between;
+  width: 100%;
+  // overflow-x: scroll;
 
   padding: 1rem;
 }
@@ -250,19 +296,37 @@ $nickel: #707a7aff;
 .cardsWrap {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  row-gap: 15px;
+  // justify-content: space-between;
+  width: 100%;
+  padding-bottom: 5px;
+  overflow-x: scroll;
+  margin: 0 -15px;
 
   .card {
-    background: $greyEvenLighter;
+    background: $greyCardDark;
     border-radius: 7px;
     width: 190px;
-    overflow: hidden;
+    min-width: 170px;
+    max-width: 170px;
+    // overflow: hidden;
     padding: 1.2rem;
+    box-sizing: content-box;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
+    margin: 0 15px;
 
     .cardImage {
-      height: 160px;
+      height: 170px;
+      width: 170px;
       box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
+
+      .round {
+        border-radius: 100px;
+      }
+
+      .normal {
+        border-radius: 5px;
+      }
 
       img {
         width: 100%;
@@ -271,8 +335,18 @@ $nickel: #707a7aff;
       }
     }
 
+    &:hover {
+      background: $greyCardLight;
+    }
+
     .cardContent {
       padding: 0.4rem 0;
+
+      .lg {
+        font-size: 1rem;
+      }
+
+      text-align: center;
 
       h3 {
         font-weight: bold;
@@ -280,4 +354,25 @@ $nickel: #707a7aff;
       }
     }
   }
+}
+
+div.cardsWrap::-webkit-scrollbar {
+  // width: 10px;
+  height: 5px;
+  cursor: pointer;
+}
+
+/* Track */
+div.cardsWrap::-webkit-scrollbar-track {
+  background: $greyLight;
+}
+
+/* Handle */
+div.cardsWrap::-webkit-scrollbar-thumb {
+  background: $charleston-green;
+}
+
+/* Handle on hover */
+div.cardsWrap::-webkit-scrollbar-thumb:hover {
+  background: $charleston-green-hover;
 }

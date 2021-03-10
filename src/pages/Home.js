@@ -6,23 +6,8 @@ const cardsUY = [
   {
     cardContent: 'Easy Listening',
     imgSrc: 'https://images.unsplash.com/photo-1499946981954-e7f4b234d7fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
-  },
-  {
-    cardContent: 'Dancehall',
-    imgSrc: 'https://is3-ssl.mzstatic.com/image/thumb/Music/a0/fd/cd/mzi.oakcvpwb.jpg/400x400bb.jpeg'
-  },
-  {
-    cardContent: 'Dancehall',
-    imgSrc: 'https://is3-ssl.mzstatic.com/image/thumb/Music/a0/fd/cd/mzi.oakcvpwb.jpg/400x400bb.jpeg'
-  },
-  {
-    cardContent: 'Dancehall',
-    imgSrc: 'https://is3-ssl.mzstatic.com/image/thumb/Music/a0/fd/cd/mzi.oakcvpwb.jpg/400x400bb.jpeg'
-  },
-  {
-    cardContent: 'Dancehall',
-    imgSrc: 'https://is3-ssl.mzstatic.com/image/thumb/Music/a0/fd/cd/mzi.oakcvpwb.jpg/400x400bb.jpeg'
-  },
+  }
+  ,
   {
     cardContent: 'Dancehall',
     imgSrc: 'https://is3-ssl.mzstatic.com/image/thumb/Music/a0/fd/cd/mzi.oakcvpwb.jpg/400x400bb.jpeg'
@@ -66,8 +51,8 @@ const Home = () => {
         <button className='btn btn-round btn-signup rounded-pill'>SIGN UP</button>
       </div>
       <div className='mainContent'>
-        {categories.map((category) => (
-          <Category name={category.name} cards={category.cards} />
+        {categories.map((category, index) => (
+          <Category key={index} name={category.name} cards={category.cards} />
         ))}
       </div>
     </div>

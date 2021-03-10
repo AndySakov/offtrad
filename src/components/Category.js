@@ -6,8 +6,8 @@ const Category = ({name, cards}) => {
     <div className='category'>
       <h1>{name}</h1>
       <div className="cardsWrap">
-        {cards.map((card) => (
-          <Card imgSrc={card.imgSrc} cardContent={card.cardContent} />
+        {cards.map((card, index) => (
+          <Card key={index} imgSrc={card.imgSrc} cardContent={card.cardContent} cardType={card.cardType} />
         ))}
       </div>
     </div>
