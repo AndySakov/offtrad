@@ -3,24 +3,21 @@ import NavBar from '../components/NavBar'
 import Home from '../pages/Home'
 
 import { useState } from 'react'
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import Artists from '../pages/Artists'
 
 const DesktopView = () => {
 
-  const pages = {
-    HOME: 'home',
-    SEARCH: 'search',
-    LIBS: 'libs'
-  }
-
-  const [page, setPage] = useState(pages.HOME)
-
   return (
     <Router>
+
+      <Route path='/' exact > 
+        <Redirect to='/home' />
+      </Route>
+
       <div className='outerWrap'>
         <div className="App">
-          <NavBar page={page} setter={setPage}/>
+          <NavBar />
 
           <Switch>
             <Route path='/home' exact render={(props) => (
@@ -45,7 +42,7 @@ const DesktopView = () => {
           </Switch>
         </div>
         <div className='musicControls'>
-          
+         
         </div>
       </div>
     </Router>
