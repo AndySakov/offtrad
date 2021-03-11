@@ -3,16 +3,14 @@ import PropTypes from 'prop-types'
 
 const Card = ({ cardType, imgSrc, cardContent }) => {
   return (
-    <>
-      <div className="card">
-            <div className="cardImage">
-                <img src={imgSrc} className={cardType} alt="Pic 1"/>
-            </div>
-            <div className="cardContent">
-              <h3 className="lg">{cardContent}</h3>
-            </div>
-          </div>
-    </>
+    <div className="card">
+      <div className="cardImage">
+        <img src={imgSrc} className={cardType} alt="Pic 1"/>
+      </div>
+      <div className="cardContent">
+        <h3 className="lg">{cardContent}</h3>
+      </div>
+    </div>
   )
 }
 

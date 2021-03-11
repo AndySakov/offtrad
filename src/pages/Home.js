@@ -45,17 +45,11 @@ const categories = [
 
 const Home = () => {
   return (
-    <div className='main'>
-      <div className='upperNav'>
-        <button className='btn btn-round btn-login rounded-pill'>LOG IN</button>
-        <button className='btn btn-round btn-signup rounded-pill'>SIGN UP</button>
-      </div>
-      <div className='mainContent'>
-        {categories.map((category, index) => (
-          <Category key={index} name={category.name} cards={category.cards} />
-        ))}
-      </div>
-    </div>
+    <>
+      {categories.map((category, index) => (
+        <Category key={index} name={category.name} cards={category.cards} />
+      ))}
+    </>
   )
 }
 
