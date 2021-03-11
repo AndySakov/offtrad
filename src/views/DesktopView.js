@@ -4,13 +4,14 @@ import Home from '../pages/Home'
 
 import { BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
 import Artists from '../pages/Artists'
+import SearchBar from '../components/SearchBar'
 
 const DesktopView = () => {
 
   return (
     <Router>
 
-      <Route path='/' exact > 
+      <Route path='/' exact >
         <Redirect to='/home' />
       </Route>
 
@@ -22,6 +23,7 @@ const DesktopView = () => {
             <div className='upperNav'>
               <button className='btn btn-round btn-login rounded-pill'>LOG IN</button>
               <button className='btn btn-round btn-signup rounded-pill'>SIGN UP</button>
+              <SearchBar />
             </div>
             <div className='mainContent'>
               <Switch>
@@ -30,7 +32,7 @@ const DesktopView = () => {
                   <Home />
                 )} />
 
-                <Route path='/search' exact render={(props) => (
+                <Route path='/discover' exact render={(props) => (
                   <></>
                 )} />
 

@@ -263,6 +263,22 @@ $nickel: #707a7aff;
   }
 }
 
+.search-bar {
+  width: 50rem;
+  height: 2.5rem;
+  margin-right: 10rem;
+  background: linear-gradient($charleston-green, $charleston-green) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+  background-color: lighten($color: $greyDark, $amount: 2%);
+  color: darken($color: $nickel, $amount: 2%);
+  outline: none;
+  border: 0;
+
+  &:focus {
+    background: linear-gradient($charleston-green-hover, $charleston-green-hover) center bottom 5px /calc(100% - 10px) 2px no-repeat;
+    color: $nickel;
+  }
+}
+
 .main {
   width: 86%;
 
