@@ -1,0 +1,217 @@
+//Custom Fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+/* SCSS HEX */
+$floral-white: #fff8f0ff;
+$auburn: #9e2b25ff;
+$english-violet: #51355aff;
+$russian-violet: #2a0c4eff;
+$beige: #f5f8deff;
+$charleston-green: #1f3030ff;
+$charleston-green-hover: lighten($charleston-green, 15%);
+$comfy-blue: #0f4c5c;
+$comfy-blue-hover: lighten($comfy-blue, 15%);
+
+.modal {
+  // margin-top: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  // background-color: grey;
+}
+
+.modal-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.modal-link {
+  color: #61dafb;
+}
+
+@keyframes modal-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//Login Main Container
+.login {
+  width: 27em;
+  height: 40em;
+  //min-height: 44em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  position: relative;
+  z-index: 99;
+  background-color: grey;
+  border-radius: 7px;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    transition: all 1000ms ease-in-out;
+    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.2);
+    border-radius: 5px;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    padding: 17px 10px;
+
+    .msg {
+      font-family: 'Open Sans';
+      font-weight: lighter;
+      font-size: 2.5rem;
+    }
+
+    .base-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      // padding: 1.1rem 0.8rem;
+
+      // svg {
+      //   max-width: 130px;
+
+      //   path {
+      //     fill: white;
+      //   }
+      // }
+      h2 {
+        padding: 1.1rem 0.8rem;
+        max-width: 130px;
+        color: white;
+        margin-left: 50px;
+        // align-self: center;
+        font-family: 'Docktrin';
+        font-weight: bold;
+      }
+    }
+
+    .form-group {
+      input {
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+        height: 40px;
+        width: 270px;
+        background-color: lightblue;
+        padding: 20px;
+      }
+    }
+
+    &.right {
+      background-color: $comfy-blue;
+    }
+
+    &.left {
+      background-color: $charleston-green-hover;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90%;
+    width: 90%;
+    position: absolute;
+    right: -34%;
+    border-radius: 7px;
+    z-index: 1;
+    transition: all 500ms ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 0px 12px 2px rgba(15, 15, 15, 0.281);
+
+    .header {
+      font-size: 0.7rem;
+      font-weight: bolder;
+      margin-right: 2.5rem;
+      transition: all 500ms ease-in-out;
+    }
+
+    .text {
+      font-size: 21px;
+      font-weight: light;
+      color: #fff;
+      margin-right: 3em;
+      margin-left: 3em;
+    }
+
+    &.right {
+      right: -40%;
+      height: 90%;
+      align-items: flex-end;
+      background-color: $charleston-green-hover;
+
+      .header {
+        margin-right: -2.5rem;
+      }
+
+      &:hover {
+        right: -45%;
+
+        .header {
+          margin-right: 0rem;
+        }
+      }
+    }
+
+    &.left {
+      right: 40%;
+      height: 90%;
+      align-items: flex-start;
+      background-color: $comfy-blue;
+
+      &:hover {
+        right: 45%;
+
+        .header {
+          margin-right: 0rem;
+        }
+      }
+    }
+  }
+}
+
+//Button
+.btn-modal {
+  font-size: 21px;
+  width: 150px;
+  padding: 7px 20px;
+  border: 0;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 30px;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #2386c8;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

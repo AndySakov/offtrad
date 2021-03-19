@@ -1,7 +1,9 @@
 import React from 'react'
 import { isMobile } from 'react-device-detect'
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/styles.scss';
+
 import DesktopView from './views/DesktopView'
 import MobileView from './views/MobileView'
 
