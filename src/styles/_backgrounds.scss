@@ -1,0 +1,19 @@
+@import 'colors';
+
+.outerWrap {
+  background: grey;
+  height: 100vh;
+  min-height: 400px;
+  width: 100vw;
+  min-width: 700px;
+  overflow: hidden;
+}
+
+.App {
+  height: 88%;
+  background: $greyLight;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  overflow: hidden;
+}

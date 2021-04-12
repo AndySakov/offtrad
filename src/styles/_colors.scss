@@ -1,0 +1,42 @@
+$greyDark: #040404;
+$greyLight: #131313;
+$greyLighter: #282828;
+$greyEvenLighter: #181818;
+$greyText: #b3b3b3;
+$greyNav: #090909;
+$greyCardDark: lighten($greyDark, 7%);
+$greyCardLight: lighten($greyLight, 7.5%);
+// Dark Mode Scheme
+$black: #000000ff;
+$smoky-black: #160e0eff;
+$outer-space-crayola: #1a3232ff;
+$outer-space-crayola-hover: lighten($outer-space-crayola, 15%);
+$deep-space-sparkle: #426161ff;
+$steel-teal: #638888ff;
+$eerie-black: #1c1c1cff;
+$old-burgundy: #362222ff;
+$dark-slate-gray: #2a5252ff;
+$dark-slate-gray-hover: lighten($dark-slate-gray, 20%);
+$ming: #527878ff;
+$steel-teal: #719898ff;
+$charleston-green: #1f3030ff;
+$charleston-green-hover: lighten($charleston-green, 15%);
+$nav-item-color: lighten($charleston-green, 20%);
+$nav-item-color-hover: lighten($nav-item-color, 15%);
+$feldgrau: #4c5959ff;
+$nickel: #707a7aff;
+/* SCSS HEX */
+$floral-white: #fff8f0ff;
+$auburn: #9e2b25ff;
+$english-violet: #51355aff;
+$russian-violet: #2a0c4eff;
+$beige: #f5f8deff;
+$charleston-green: #1f3030ff;
+$charleston-green-hover: lighten($charleston-green, 15%);
+$comfy-blue: #0f4c5c;
+$comfy-blue-hover: lighten($comfy-blue, 15%);
+
+$slider-track-color: $nickel;
+$slider-track-color-hover: darken($nickel, 10%);
+$slider-track-border-color: $slider-track-color;
+$slider-track-border-color-: $slider-track-color;

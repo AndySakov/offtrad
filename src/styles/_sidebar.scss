@@ -1,0 +1,96 @@
+@import 'colors';
+
+.sideBar {
+  width: 228px;
+  height: 100%;
+  background: linear-gradient(lighten($greyDark, 7.5%), $greyDark);
+  padding: 10px 10px 0px;
+  display: flex;
+  flex-direction: column;
+
+  .logo {
+    h2 {
+      padding: 1.1rem 0.8rem;
+      max-width: 130px;
+      color: white;
+      font-family: 'Docktrin';
+      font-weight: bold;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      font-family: 'TT Norms Pro ExtraBlack';
+      font-weight: bolder;
+      color: $greyText;
+      list-style-type: none;
+      border-radius: 5px;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: white;
+      }
+
+      .text-with-icon {
+        padding: 0.1rem;
+
+        .icon {
+          justify-self: center;
+          margin-right: 1.15rem;
+          filter: invert(.7);
+        }
+      }
+    }
+  }
+
+  .cookies {
+    font-size: 0.6rem;
+    color: $greyText;
+    text-align: center;
+    margin-top: auto;
+    padding: 1rem;
+
+    span {
+      display: block;
+    }
+  }
+
+  .underlined-text {
+    transition: all 0.1s;
+    text-decoration: none;
+    font-weight: inherit;
+    cursor: normal;
+
+    &:hover {
+      font-weight: 800;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+.navText {
+  color: $greyText;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.activeNav {
+  color: $dark-slate-gray;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-slate-gray-hover;
+    text-decoration: none;
+  }
+}

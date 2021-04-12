@@ -11,9 +11,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 
+import Bus from './components/utils/Bus';
+
 
 const App = () => {
   library.add(fas, fab)
+  window.flash = (error, message, type="success") => Bus.emit('flash', ({error, message, type}));
   return (
     <>
       {isMobile ? <MobileView /> : <DesktopView />}

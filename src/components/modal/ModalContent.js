@@ -1,9 +1,6 @@
 import React from "react";
-import "./Modal.scss";
-import "./style.scss";
 import Login from './Login'
 import Register from './Register'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 class ModalContent extends React.Component {
@@ -14,16 +11,18 @@ class ModalContent extends React.Component {
       closer: refr.current
     };
   }
-  closer = <div className='modal-closer'><FontAwesomeIcon icon="times" className="icon flip_this" onClick={() => this.state.closer.close()} size='2x' /></div>
 
   componentDidMount() {
     //Add .right by default
+    const addClasses = (name) => {
+      this.rightSide.classList.add(name)
+      this.container.classList.add(name)
+    }
+
     if(this.state.isLoginActive){
-      this.rightSide.classList.add("right")
-      this.container.classList.add("right")
+      addClasses("right")
     } else {
-      this.rightSide.classList.add("left")
-      this.container.classList.add("left")
+      addClasses("left")
     }
   }
 
@@ -54,10 +53,10 @@ class ModalContent extends React.Component {
           <div className="container" ref={ref => (this.container = ref)}>
 
             {isLoginActive && (
-              <Login containerRef={ref => (this.current = ref)} closer={this.closer} />
+              <Login containerRef={ref => (this.current = ref)} closer={this.state.closer} handleLogin={(e) => this.props.handleLogin(e)} />
             )}
             {!isLoginActive && (
-              <Register containerRef={ref => (this.current = ref)} closer={this.closer} />
+              <Register containerRef={ref => (this.current = ref)} closer={this.state.closer} />
             )}
 
           </div>

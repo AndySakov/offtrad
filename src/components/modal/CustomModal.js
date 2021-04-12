@@ -6,8 +6,6 @@ import React, {
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import './style.scss'
-
 const CustomModal = forwardRef((props, ref) => {
   const [open, setOpen] = useState(false);
 

@@ -1,0 +1,1 @@
+export const server = 'https://offtrad-bkn.herokuapp.com'

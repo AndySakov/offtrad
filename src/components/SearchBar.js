@@ -112,7 +112,7 @@ class SearchBarWithAutoSuggest extends React.Component {
     };
 
     return (
-      <Autosuggest 
+      <Autosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}

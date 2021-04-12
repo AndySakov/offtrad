@@ -1,25 +1,30 @@
 //Custom Fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
-
-/* SCSS HEX */
-$floral-white: #fff8f0ff;
-$auburn: #9e2b25ff;
-$english-violet: #51355aff;
-$russian-violet: #2a0c4eff;
-$beige: #f5f8deff;
-$charleston-green: #1f3030ff;
-$charleston-green-hover: lighten($charleston-green, 15%);
-$comfy-blue: #0f4c5c;
-$comfy-blue-hover: lighten($comfy-blue, 15%);
+@import 'colors';
 
 .modal {
-  // margin-top: 50px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Open Sans", sans-serif;
-  // background-color: grey;
+}
+
+.modal-closer {
+  position: absolute;
+  top: -10px;
+  left: 800px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+
+  &:hover .flip_this {
+    transition: 0.5s;
+    transform: rotate(180deg);
+  }
+}
+
+.modal-content-wrapper {
+  border-radius: 7px;
 }
 
 .modal-header {
@@ -37,21 +42,10 @@ $comfy-blue-hover: lighten($comfy-blue, 15%);
   color: #61dafb;
 }
 
-@keyframes modal-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 //Login Main Container
 .login {
   width: 27em;
   height: 40em;
-  //min-height: 44em;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,15 +83,6 @@ $comfy-blue-hover: lighten($comfy-blue, 15%);
     }
 
     .logo {
-      // padding: 1.1rem 0.8rem;
-
-      // svg {
-      //   max-width: 130px;
-
-      //   path {
-      //     fill: white;
-      //   }
-      // }
       h2 {
         padding: 1.1rem 0.8rem;
         max-width: 130px;

@@ -1,0 +1,28 @@
+@import 'cards';
+
+.main {
+  width: 88%;
+  overflow: hidden;
+
+  .mainContent {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 0.5rem 1.5rem;
+
+    height: 91%;
+    width: 100%;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}

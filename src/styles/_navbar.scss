@@ -1,0 +1,73 @@
+@import 'colors';
+@import 'search-bar';
+
+.upperNav {
+  background: $greyNav;
+  height: 10%;
+  min-height: 60px;
+  max-height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+
+  .btn-login {
+    background: white;
+    color: black;
+    justify-self: end;
+    font-family: 'TT Norms Pro Black';
+    font-weight: bolder;
+    font-size: 0.75rem;
+    width: 7.5em;
+    height: 2.4rem;
+    margin-left: 1rem;
+    outline: none;
+    box-shadow: none;
+  }
+
+  .also {
+    background: white;
+    color: black;
+    justify-self: end;
+    font-weight: bolder;
+    font-size: 0.75rem;
+    width: 7.5rem;
+    height: 2.4rem;
+    margin-left: 2rem;
+    outline: none;
+    box-shadow: none;
+    position: absolute;
+  }
+
+  .also:hover {
+    width: 7.7rem;
+    height: 2.6rem;
+    background: white;
+    font-weight: 1.7rem;
+  }
+
+  .btn-signup {
+    background: $greyNav;
+    color: white;
+    justify-self: end;
+    font-family: 'TT Norms Pro Black';
+    font-weight: bolder;
+    margin-right: 10px;
+    font-size: 0.75rem;
+    width: 6rem;
+    height: 1.5rem;
+    outline: none;
+    box-shadow: none;
+    position: static;
+  }
+
+  .btn-signup:hover {
+    // width: 6.2rem;
+    // height: 1.7rem;
+    font-size: 0.8rem;
+  }
+}

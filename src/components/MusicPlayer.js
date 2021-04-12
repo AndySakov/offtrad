@@ -156,7 +156,7 @@ class MusicPlayer extends React.Component {
         </div>
 
         {/* <!-- player center --> */}
-        <div className="col player-center">
+        <div className="player-center">
             {/* <!-- track buttons --> */}
             <div className="buttons-wrapper">
               <div className="prev-track" onClick={this.prevTrack}>

@@ -1,0 +1,101 @@
+@import 'colors';
+
+.cardsWrap {
+  display: flex;
+  flex-direction: row;
+  row-gap: 15px;
+  width: 100%;
+  padding-bottom: 5px;
+  overflow-x: scroll;
+  margin: 0 -15px;
+
+  .card {
+    background: $greyCardDark;
+    border-radius: 7px;
+    width: 190px;
+    min-width: 170px;
+    max-width: 170px;
+    // overflow: hidden;
+    padding: 1.2rem;
+    box-sizing: content-box;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
+    margin: 0 15px;
+    cursor: pointer;
+
+    .cardImage {
+      height: 170px;
+      width: 170px;
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .3), 0 1px 2px 0 rgba(0, 0, 0, .2);
+
+      .round {
+        border-radius: 100px;
+      }
+
+      .normal {
+        border-radius: 5px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &:hover {
+      background: $greyCardLight;
+    }
+
+    .cardContent {
+      padding: 0.4rem 0;
+
+      .lg {
+        font-size: 1rem;
+      }
+
+      text-align: center;
+
+      h3 {
+
+        font-weight: bold;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+
+
+div.cardsWrap::-webkit-scrollbar {
+  // width: 10px;
+  height: 5px;
+  cursor: pointer;
+}
+
+/* Track */
+div.cardsWrap::-webkit-scrollbar-track {
+  background: $greyLight;
+}
+
+/* Handle */
+div.cardsWrap::-webkit-scrollbar-thumb {
+  background: $charleston-green;
+}
+
+/* Handle on hover */
+div.cardsWrap::-webkit-scrollbar-thumb:hover {
+  background: $charleston-green-hover;
+}
+
+.artist {
+  font-size: x-small;
+  color: darken($color: white, $amount: 0%);
+  margin-top: -5px;
+
+  &:hover {
+    .artist-name {
+      font-size: x-small;
+      color: white;
+      text-decoration: underline;
+    }
+  }
+}
