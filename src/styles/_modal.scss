@@ -87,7 +87,7 @@
     .logo {
       h2 {
         // padding: 1.1rem 0.8rem;
-        margin-top: 3rem;
+        margin-top: 5rem;
         max-width: 130px;
         color: white;
         // margin-left: 50px;
@@ -99,7 +99,7 @@
 
     .form-group {
       input {
-        border: 0;
+        border: none;
         outline: none;
         border-radius: 30px;
         height: 40px;
@@ -108,8 +108,17 @@
         padding: 20px;
       }
 
-      GoogleLogin {
+      button {
         border-radius: 30px;
+        font-size: small;
+        font-family: 'TT Norms Pro Black';
+        padding: 0.8rem;
+        width: 270px;
+        border: none;
+
+        &:hover {
+          background-color: darken($color: white, $amount: 40);
+        }
       }
     }
 
@@ -206,4 +215,36 @@
   &:focus {
     outline: none;
   }
+}
+
+.btn-icon {
+  margin-right: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+.hline {
+  overflow: hidden;
+  text-align: center;
+}
+
+.hline:before,
+.hline:after {
+  background-color: #000;
+  content: " ";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.hline:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.hline:after {
+  left: 0.5em;
+  margin-right: -50%;
 }

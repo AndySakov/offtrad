@@ -31,7 +31,7 @@ const DesktopView = () => {
     modalRef.current.open()
   }
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     let resr = false
     e.preventDefault()
     const email = document.querySelector("#email").value
@@ -41,11 +41,12 @@ const DesktopView = () => {
       const data = res.status ? res.data : {id: null}
       resr = data.id == null ? false : true
       resr ? window.flash('Login Success', 'Welcome Back!') : window.flash('Login Failed', 'Email or Password is wrong!', 'danger')
-      data.id == null ? console.log("No Login!") : dispatch(login(data))
+      delete data.pwd
+      data.id == null ? console.log("No Login!") : dispatch(login({...data, imgSrc: ""}))
     })
   }
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault()
     const user = document.querySelector("#user").value
     const email = document.querySelector("#email2").value
@@ -57,6 +58,42 @@ const DesktopView = () => {
       res.status ? window.flash('Signup Successful!', 'You can now login with your credentials') : window.flash('Signup Failed!', 'Unknown Error', 'danger')
     })
 
+  }
+  
+  const handleGoogle = async (response, type) => {
+    if(type === "success") { 
+      window.flash('Login Success', 'Logged in with Google')
+      const data = response.profileObj
+
+      const payload = {
+        email: data.email,
+        name: data.name,
+        id: data.googleId,
+        imgSrc: data.imageUrl
+      }
+      dispatch(login(payload))
+
+    } else { 
+      window.flash('Login Failure', 'Unable to login with Google!', 'danger')
+      console.log(response)
+    }
+  }
+
+  const handleFacebook = async (response) => {
+    console.log(response);
+    if (response.status !== "unknown") {
+      window.flash('Login Success', 'Logged in with Facebook')
+      const payload = {
+        id: response.userID,
+        name: response.name,
+        email: response.email,
+        imgSrc: response.picture.data.url
+      }
+      dispatch(login(payload))
+    } else {
+      window.flash('Login Failure', 'Unable to login with Facebook!', 'danger')
+      console.log(response)
+    }
   }
 
   return (
@@ -70,7 +107,15 @@ const DesktopView = () => {
 
           <div className='main'>
               <nav className='upperNav'>
-                {!isLoggedIn && <DemoUserComps side={side} handleLogin={(e) => handleLogin(e)} handleSignup={(e) => handleSignup(e)} modalTrigger={ (side) => modalTrigger(side) }  modalRef={modalRef} />}
+                {!isLoggedIn && <DemoUserComps side={side} 
+                                  handleLogin={(e) => handleLogin(e)} 
+                                  handleSignup={(e) => handleSignup(e)} 
+                                  handleGoogle={(response, type) => handleGoogle(response, type)}
+                                  handleFacebook={(response) => handleFacebook(response)}
+                                  modalTrigger={ (side) => modalTrigger(side) } 
+                                  modalRef={modalRef} 
+                  />
+                }
                 <SearchBar />
               </nav>
               <div className='mainContent'>
