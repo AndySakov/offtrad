@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux';
-import NavBar from '../components/SideBar'
+import SideBar from '../components/SideBar'
 import Home from '../pages/Home'
 
 import { BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom'
@@ -11,12 +11,16 @@ import * as api from '../api'
 import { login } from '../redux/ducks/data';
 import { Flash } from '../components/Flash';
 import DemoUserComps from '../components/DemoUserComps';
+import store from '../redux/store'
 
 const DesktopView = () => {
 
   const [side, setSide] = useState(true)
 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  const unsubscribe = store.subscribe(() => setIsLoggedIn(store.getState().isLoggedIn))
+  unsubscribe()
 
   const modalRef = useRef();
 
@@ -27,35 +31,46 @@ const DesktopView = () => {
     modalRef.current.open()
   }
 
-  const handleLogin = (e, formId) => {
-    let res = false
+  const handleLogin = (e) => {
+    let resr = false
     e.preventDefault()
     const email = document.querySelector("#email").value
     const pass = document.querySelector("#pass").value
     const userData = api.login(email, pass)
     userData.then((res) => {
       const data = res.status ? res.data : {id: null}
-      res = data.id == null ? false : true
-      res ? window.flash('Login Success', 'Welcome Back!') : window.flash('Login Failed', 'Email or Password is wrong!', 'danger')
+      resr = data.id == null ? false : true
+      resr ? window.flash('Login Success', 'Welcome Back!') : window.flash('Login Failed', 'Email or Password is wrong!', 'danger')
       data.id == null ? console.log("No Login!") : dispatch(login(data))
     })
-    setIsLoggedIn(res)
+  }
+
+  const handleSignup = (e) => {
+    e.preventDefault()
+    const user = document.querySelector("#user").value
+    const email = document.querySelector("#email2").value
+    const full = document.querySelector("#full").value
+    const pass = document.querySelector("#pass").value
+    const userData = api.signup(user, email, full, pass)
+
+    userData.then((res) => {
+      res.status ? window.flash('Signup Successful!', 'You can now login with your credentials') : window.flash('Signup Failed!', 'Unknown Error', 'danger')
+    })
+
   }
 
   return (
     <Router>
 
-      <Route exact path='/'>
-        <Redirect to='/home' />
-      </Route>
+      <Redirect path='/' to='/home' />
 
       <div className='outerWrap'>
         <div className='App'>
-          <NavBar />
+          <SideBar />
 
           <div className='main'>
               <nav className='upperNav'>
-                {!isLoggedIn && <DemoUserComps side={side} handleLogin={(e) => handleLogin(e)} modalTrigger={ (side) => modalTrigger(side) }  modalRef={modalRef} />}
+                {!isLoggedIn && <DemoUserComps side={side} handleLogin={(e) => handleLogin(e)} handleSignup={(e) => handleSignup(e)} modalTrigger={ (side) => modalTrigger(side) }  modalRef={modalRef} />}
                 <SearchBar />
               </nav>
               <div className='mainContent'>

@@ -6,31 +6,36 @@ class Register extends React.Component {
     super();
   }
 
-  submitForm = () => {
-    // const pass = document.querySelector("#pass")
-    // const cf_pass = document.querySelector("#cf_pass")
-    // const form = document.querySelector("form")
-    // // cf_pass.nodeValue == pass.nodeValue ? form.submit : console.log("")
+  submitForm = (e) => {
+    const pass = document.querySelector("#pass").value
+    const cf_pass = document.querySelector("#cf_pass").value
+    if(pass === cf_pass) {
+      this.props.handleSignup(e)
+      this.props.changeUp()
+    } else {
+      window.flash('Signup Failed!', 'Password and Confirm Password not equal!', 'danger')
+    }
   }
 
   render() {
     return (
       <div className="base-container" ref={this.props.containerRef}>
         <div className='modal-closer' onClick={() => this.props.closer.close()} ><FontAwesomeIcon icon="times" className="icon flip_this" size='2x' /></div>
-        <div className="msg">Nice to meet you!</div>
-        <div className="content">
-          <div className="image logo">
+        <div className="image logo">
             <h2>OFFTRAD!</h2>
           </div>
-          <form className="form" action="" method="POST" onSubmit={this.submitForm}>
+        <div className="msg">Nice to meet you!</div>
+
+        <div className="my-content">
+          <form id="signup" className="form" action="" method="POST" onSubmit={(e) => this.submitForm(e)}>
             <div className="form-group">
-              <input type="text" name="user" placeholder="Username" required />
+              <input id="user" type="text" name="user" placeholder="Username" required />
             </div>
             <div className="form-group">
-              <input type="email" name="email" placeholder="Email" required />
+              <input id="email2" type="email" name="email" placeholder="Email" required />
             </div>
             <div className="form-group">
-              <input type="text" name="name" placeholder="Fullname" required />
+              <input id="full" type="text" name="name" placeholder="Fullname" required />
             </div>
             <div className="form-group">
               <input id='pass' type="password" name="pass" placeholder="Password" required />

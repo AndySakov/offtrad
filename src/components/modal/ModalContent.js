@@ -56,7 +56,7 @@ class ModalContent extends React.Component {
               <Login containerRef={ref => (this.current = ref)} closer={this.state.closer} handleLogin={(e) => this.props.handleLogin(e)} />
             )}
             {!isLoginActive && (
-              <Register containerRef={ref => (this.current = ref)} closer={this.state.closer} />
+              <Register containerRef={ref => (this.current = ref)} closer={this.state.closer} changeUp={() => this.changeState()} handleSignup={(e) => this.props.handleSignup(e)} />
             )}
 
           </div>

@@ -30,3 +30,29 @@ export const login = (email, pass) => {
   //   console.log({result: true, ..._data})
   // })
 }
+
+export const signup = (user, email, full, pass) => {
+  const raw = {
+    name: full,
+    email: email,
+    pwd: pass
+  }
+
+  let parsed = []
+
+  for (var property in raw) {
+    var encodedKey = encodeURIComponent(property);
+    var encodedValue = encodeURIComponent(raw[property]);
+    parsed.push(encodedKey + "=" + encodedValue);
+  }
+
+  parsed = parsed.join("&");
+
+  return fetch(`${consts.server}/users`, {
+    method: 'POST',
+    body: parsed,
+    headers: new Headers({
+      "Content-Type": "application/x-www-form-urlencoded"
+    })
+  }).then(res => res.json()).catch((e) => console.log(e))
+}

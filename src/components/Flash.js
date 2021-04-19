@@ -17,7 +17,7 @@ export const Flash = () => {
             setType(type);
             setTimeout(() => {
                 setVisibility(false);
-            }, 4000);
+            }, 10000);
         });
 
     }, []);
